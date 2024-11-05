@@ -1,25 +1,27 @@
-import { Navbar, TextInput, Button } from 'flowbite-react';
+import { Navbar, Button } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function Header() {
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="border-b-2 mt-4 mb-4">
       <Link to="/" className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
         <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg text-white">
           Ritesh's
         </span>{' '}
         Blogs
       </Link>
-      <form className="relative hidden lg:block">
-        <TextInput
-          type='text'
-          placeholder='Search...'
-          rightIcon={AiOutlineSearch}
-          className='hidden lg:inline'
-        />
-      </form>
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+      <div className="relative hidden lg:flex items-center ml-auto">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-64"
+          />
+          <AiOutlineSearch className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        </div>
+      </div>
+      <Button className="w-12 h-10 lg:hidden ml-auto" color="gray" pill>
         <AiOutlineSearch />
       </Button>
     </Navbar>
